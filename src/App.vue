@@ -1,17 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-if="this.roomName === ''">
+      <Entrance v-on:enter-room="enterRoom"/>
+    </div>
+    <div v-else>
+      <Room :roomName="roomName" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Entrance from './components/Entrance.vue'
+import Room from './components/Room.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Entrance,
+    Room
+  },
+  data(){
+    return{
+      roomName: ""
+    }
+  },
+  methods: {
+    enterRoom(roomName){
+      alert(roomName + "に入場します")
+      this.roomName = roomName
+    }
   }
 }
 </script>
