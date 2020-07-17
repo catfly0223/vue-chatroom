@@ -26,3 +26,17 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 参考
 https://github.com/ticktakclock/WebRTCDemo
+
+``` 
+npm i
+```
+
+サーバー起動
+```
+node ./server/app.js
+```
+
+別CMDウィンドウでクライアント起動
+```
+npm run serve
+``` 
